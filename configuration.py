@@ -1,0 +1,7 @@
+
+END_OF_FILE     = "##**##**##**##**##"
+CRC_GENERATOR   = "10110100110101110011010101110100000101"
+REJECT          = "NAK"
+ACCEPT          = "OK"
+FRAME_SIZE      = 10
+BUFFER_SIZE     = 1024 * 10

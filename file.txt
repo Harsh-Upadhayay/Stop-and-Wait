@@ -1,0 +1,21 @@
+Stop and wait protocol is an error control protocol, in this protocol the sender sends data packets one at a time and waits for positive acknowledgement from the receivers side, if acknowledgement is received then the sender sends the next data packet else it'll resend the previous packet until a positive acknowledgement is not received. To get more info on what is stop and wait protocol refer Stop and Wait ARQ article.
+
+CRC aka Cyclic redundancy check is an error detection mechanism, its procedure is as follows.
+
+Sender side
+
+Choose a generator polynomial mutually agreed upon by the sender and receiver, let k be the number of bits in the key obtained from this polynomial.
+Append (k - 1) 0's to the right of the actual binary data.
+Divide the data obtained in step 2 by the key, and store the remainder.
+Append the remainder to the actual binary data, and send the data packet.
+
+Receiver side
+
+Divide the received data bits by the key.
+If the remainder is non zero then the data is corrupted.
+
+For more information on how CRC works refer Wikipedia.
+
+
+
+In this article we will implement CRC Algorithm such that the sender computes error detecting code using CRC and sends the data along with error detecting code to the receiver using socket. Receiver, after ensuring error free frame saves the data.
